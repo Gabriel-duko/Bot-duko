@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .produto {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .produto h3 {
+      margin: 0.5rem 0;
+    }
+    .produto p {
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Catálogo de Produtos</h1>
+  <div class="catalogo" id="catalogo"></div>
+
+  <script>
+    // Substitua pelo seu token OAuth 2.0 de acesso
+    const accessToken = '00Dak00000QGSe6!AQEAQMMSQw0IDJVMJqqYPShiG4Q4t.65G1yRlP8o586E8hnmmwaWyy8Bg47xCRq2eagt0feUyeP0PexQ3t2Pk.rIK_gpKH_j';
+
+    // URL base da sua org Salesforce + caminho da API REST
+    const instanceUrl = 'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.salesforce.com';
+    const endpoint = '/services/apexrest/catalogo/produtos';
+
+    fetch(instanceUrl + endpoint, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Erro: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(produtos => {
+      const container = document.getElementById('catalogo');
+      produtos.forEach(prod => {
+        container.innerHTML += `
+          <div class="produto">
+            <h3>${prod.Name}</h3>
+            <p>${prod.Description || 'Sem descrição'}</p>
+            <p><strong>Preço:</strong> R$ ${prod.Price__c || '0,00'}</p>
+          </div>
+        `;
+      });
+    })
+    .catch(error => {
+      document.getElementById('catalogo').innerHTML = `
+        <p>Não foi possível carregar os produtos. Verifique se o token está correto.</p>
+        <p>${error.message}</p>
+      `;
+      console.error('Erro ao buscar produtos:', error);
+    });
+  </script>
+</body>
+</html>
