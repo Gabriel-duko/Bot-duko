@@ -1,24 +1,172 @@
 <html>
 	<body>
-		<script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+		  <header>
+		    <nav class="navbar">
+		      <div class="logo">Minha Loja</div>
+		      <ul class="nav-links">
+		        <li><a href="#home">Início</a></li>
+		        <li><a href="#produtos">Produtos</a></li>
+		        <li><a href="#sobre">Sobre</a></li>
+		        <li><a href="#contato">Contato</a></li>
+		      </ul>
+		    </nav>
+		  </header>
+		
+		  <main>
+		    <section id="home" class="hero">
+		      <h1>Bem-vindo à Minha Loja!</h1>
+		      <p>Os melhores produtos para você.</p>
+		    </section>
+		
+		    <section id="produtos" class="produtos">
+		      <h2>Produtos em destaque</h2>
+		      <div class="produto-lista">
+		        <!-- Exemplo de produto -->
+		        <div class="produto">
+		          <img src="https://via.placeholder.com/200" alt="Produto 1" />
+		          <h3>Produto 1</h3>
+		          <p>R$ 99,90</p>
+		          <button>Comprar</button>
+		        </div>
+		        <!-- Adicione mais produtos aqui -->
+		      </div>
+		    </section>
+		
+		    <section id="sobre">
+		      <h2>Sobre Nós</h2>
+		      <p>Somos uma loja dedicada a oferecer os melhores produtos online.</p>
+		    </section>
+		
+		    <section id="contato">
+		      <h2>Contato</h2>
+		      <p>Email: contato@minhaloja.com</p>
+		    </section>
+		  </main>
+		
+		  <footer>
+		    <p>&copy; 2025 Minha Loja. Todos os direitos reservados.</p>
+		  </footer>
 
-			embeddedservice_bootstrap.init(
-				'00Dak00000QGSe6',
-				'Web_Chat',
-				'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/ESWWebChat1745434042807',
-				{
-					scrt2URL: 'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.salesforce-scrt.com'
+		<style>
+			* {
+				  margin: 0;
+				  padding: 0;
+				  box-sizing: border-box;
 				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-<script type='text/javascript' src='https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/ESWWebChat1745434042807/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+				
+				body {
+				  font-family: 'Arial', sans-serif;
+				  line-height: 1.6;
+				}
+				
+				.navbar {
+				  background-color: #222;
+				  color: #fff;
+				  display: flex;
+				  justify-content: space-between;
+				  align-items: center;
+				  padding: 1rem 2rem;
+				  position: sticky;
+				  top: 0;
+				  z-index: 1000;
+				}
+				
+				.logo {
+				  font-size: 1.5rem;
+				  font-weight: bold;
+				}
+				
+				.nav-links {
+				  list-style: none;
+				  display: flex;
+				  gap: 1.5rem;
+				}
+				
+				.nav-links a {
+				  color: white;
+				  text-decoration: none;
+				  transition: color 0.3s ease;
+				}
+				
+				.nav-links a:hover {
+				  color: #f0c040;
+				}
+				
+				.hero {
+				  background-color: #f4f4f4;
+				  padding: 5rem 2rem;
+				  text-align: center;
+				}
+				
+				.produtos {
+				  padding: 3rem 2rem;
+				  background-color: #fff;
+				}
+				
+				.produto-lista {
+				  display: flex;
+				  flex-wrap: wrap;
+				  gap: 2rem;
+				  justify-content: center;
+				  margin-top: 2rem;
+				}
+				
+				.produto {
+				  border: 1px solid #ddd;
+				  padding: 1rem;
+				  text-align: center;
+				  width: 200px;
+				}
+				
+				.produto img {
+				  max-width: 100%;
+				  height: auto;
+				}
+				
+				.produto button {
+				  background-color: #222;
+				  color: white;
+				  border: none;
+				  padding: 0.5rem 1rem;
+				  margin-top: 0.5rem;
+				  cursor: pointer;
+				}
+				
+				.produto button:hover {
+				  background-color: #f0c040;
+				  color: #222;
+				}
+				
+				section {
+				  margin-bottom: 4rem;
+				}
+				
+				footer {
+				  background-color: #222;
+				  color: white;
+				  text-align: center;
+				  padding: 1rem 0;
+				}
+		</style>
 
+		<script type='text/javascript'>
+			function initEmbeddedMessaging() {
+				try {
+					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			
+					embeddedservice_bootstrap.init(
+						'00Dak00000QGSe6',
+						'Web_Chat',
+						'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/ESWWebChat1745434042807',
+						{
+							scrt2URL: 'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.salesforce-scrt.com'
+						}
+					);
+				} catch (err) {
+					console.error('Error loading Embedded Messaging: ', err);
+				}
+			};
+		</script>
+		<script type='text/javascript' src='https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/ESWWebChat1745434042807/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 	</body>
 </html>
