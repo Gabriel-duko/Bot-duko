@@ -1,146 +1,146 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>duko E-commerce</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Tema claro (padrão) */
-      body {
-        background-color: white;
-        color: black;
-        transition: background-color 0.3s, color 0.3s;
-      }
+<head>
+  <title>duko E-commerce</title>
+  <link id="theme-stylesheet" rel="stylesheet" href="style_claro.css" />
+  <style>
+    /* Estilização do botão de modo escuro */
+    .dark-mode-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: inherit;
+      cursor: pointer;
+      font-size: 14px;
+    }
 
-      /* Tema escuro */
-      body.dark-mode {
-        background-color: #121212;
-        color: white;
-      }
+    .dark-mode-toggle input {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
 
-      /* Estilização do botão de modo escuro */
-      .dark-mode-toggle {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: inherit;
-        cursor: pointer;
-        font-size: 14px;
-      }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #eee;
+    }
 
-      .dark-mode-toggle input {
-        transform: scale(1.2);
-        cursor: pointer;
-      }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #eee;
-      }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-      }
+    .logo {
+      font-weight: bold;
+    }
+  </style>
+</head>
 
-      .nav-links a {
-        text-decoration: none;
-        color: inherit;
-      }
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Minha Loja</div>
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/s">Produtos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <label class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle" />
+        Modo escuro
+      </label>
+    </nav>
+  </header>
 
-      .logo {
-        font-weight: bold;
-      }
-    </style>
-  </head>
+  <main>
+    <section id="home" class="hero">
+      <h1>Bem-vindo à Minha Loja!</h1>
+      <p>Os melhores produtos para você.</p>
+    </section>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">Minha Loja</div>
-        <ul class="nav-links">
-          <li><a href="#home">Início</a></li>
-          <li>
-            <a
-              href="https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/s"
-              >Produtos</a
-            >
-          </li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-        <label class="dark-mode-toggle">
-          <input type="checkbox" id="darkModeToggle" />
-          Modo escuro
-        </label>
-      </nav>
-    </header>
-
-    <main>
-      <section id="home" class="hero">
-        <h1>Bem-vindo à Minha Loja!</h1>
-        <p>Os melhores produtos para você.</p>
-      </section>
-
-      <section id="produtos" class="produtos">
-        <h2>Produtos em destaque</h2>
-        <div class="produto-lista">
-          <div class="produto">
-            <img src="https://via.placeholder.com/200" alt="Produto 1" />
-            <h3>Produto 1</h3>
-            <p>R$ 99,90</p>
-            <button>Comprar</button>
-          </div>
+    <section id="produtos" class="produtos">
+      <h2>Produtos em destaque</h2>
+      <div class="produto-lista">
+        <div class="produto">
+          <img src="https://via.placeholder.com/200" alt="Produto 1" />
+          <h3>Produto 1</h3>
+          <p>R$ 99,90</p>
+          <button>Comprar</button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Somos uma loja dedicada a oferecer os melhores produtos online.</p>
-      </section>
+    <section id="sobre">
+      <h2>Sobre Nós</h2>
+      <p>Somos uma loja dedicada a oferecer os melhores produtos online.</p>
+    </section>
 
-      <section id="contato">
-        <h2>Contato</h2>
-        <p>Email: gabriel.barbosa@duko.com.br</p>
-      </section>
-    </main>
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Email: gabriel.barbosa@duko.com.br</p>
+    </section>
+  </main>
 
-    <footer>
-      <p>&copy; 2025 Duko. Todos os direitos reservados.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Duko. Todos os direitos reservados.</p>
+  </footer>
 
-    <!-- Script do modo escuro -->
-    <script>
-      document.getElementById('darkModeToggle').addEventListener('change', function () {
-        document.body.classList.toggle('dark-mode', this.checked);
-      });
-    </script>
+  <!-- Script para alternar entre temas -->
+  <script>
+    const themeToggle = document.getElementById('darkModeToggle');
+    const themeStylesheet = document.getElementById('theme-stylesheet');
+    const darkTheme = 'style_escuro.css';
+    const lightTheme = 'style_claro.css';
 
-    <!-- Script do Web Chat -->
-    <script type="text/javascript">
-      function initEmbeddedMessaging() {
-        try {
-          embeddedservice_bootstrap.settings.language = 'en_US';
-          embeddedservice_bootstrap.init(
-            '00Dak00000QGSe6',
-            'Web_Chat',
-            'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/ESWWebChat1745434042807',
-            {
-              scrt2URL:
-                'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.salesforce-scrt.com',
-            }
-          );
-        } catch (err) {
-          console.error('Error loading Embedded Messaging: ', err);
-        }
+    // Verifica o tema salvo no localStorage
+    if (localStorage.getItem('darkMode') === 'true') {
+      themeStylesheet.href = darkTheme;
+      themeToggle.checked = true;
+    }
+
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        themeStylesheet.href = darkTheme;
+        localStorage.setItem('darkMode', 'true');
+      } else {
+        themeStylesheet.href = lightTheme;
+        localStorage.setItem('darkMode', 'false');
       }
-    </script>
-    <script
-      type="text/javascript"
-      src="https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/ESWWebChat1745434042807/assets/js/bootstrap.min.js"
-      onload="initEmbeddedMessaging()"
-    ></script>
-  </body>
+    });
+  </script>
+
+  <!-- Script do Web Chat -->
+  <script type="text/javascript">
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US';
+        embeddedservice_bootstrap.init(
+          '00Dak00000QGSe6',
+          'Web_Chat',
+          'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/ESWWebChat1745434042807',
+          {
+            scrt2URL:
+              'https://creative-impala-fzbtn3-dev-ed.trailblaze.my.salesforce-scrt.com',
+          }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    }
+  </script>
+  <script
+    type="text/javascript"
+    src="https://creative-impala-fzbtn3-dev-ed.trailblaze.my.site.com/ESWWebChat1745434042807/assets/js/bootstrap.min.js"
+    onload="initEmbeddedMessaging()"
+  ></script>
+</body>
 </html>
