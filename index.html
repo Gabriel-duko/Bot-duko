@@ -80,6 +80,50 @@
     .logo {
       font-weight: bold;
     }
+
+    /* Estilos do carrossel de produtos */
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      padding: 2rem 1rem;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .produto {
+      flex: 0 0 250px;
+      scroll-snap-align: center;
+      border: 2px solid #C5A5E2;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      background-color: #F9F8FC;
+    }
+
+    .produto img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .produto button {
+      background-color: #4EC4B0;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .produto button:hover {
+      background-color: #8B5FBF;
+    }
   </style>
 </head>
 
@@ -112,13 +156,12 @@
 
     <section id="produtos" class="produtos">
       <h2>Produtos em destaque</h2>
-      <div class="produto-lista">
-        <div class="produto">
-          <img src="https://via.placeholder.com/200" alt="Produto 1" />
-          <h3>Produto 1</h3>
-          <p>R$ 99,90</p>
-          <button>Comprar</button>
-        </div>
+      <div class="carousel-container">
+        <div class="produto"><img src="https://via.placeholder.com/200" alt="Produto 1" /><h3>Produto 1</h3><p>R$ 99,90</p><button>Comprar</button></div>
+        <div class="produto"><img src="https://via.placeholder.com/200" alt="Produto 2" /><h3>Produto 2</h3><p>R$ 149,90</p><button>Comprar</button></div>
+        <div class="produto"><img src="https://via.placeholder.com/200" alt="Produto 3" /><h3>Produto 3</h3><p>R$ 199,90</p><button>Comprar</button></div>
+        <div class="produto"><img src="https://via.placeholder.com/200" alt="Produto 4" /><h3>Produto 4</h3><p>R$ 249,90</p><button>Comprar</button></div>
+        <div class="produto"><img src="https://via.placeholder.com/200" alt="Produto 5" /><h3>Produto 5</h3><p>R$ 299,90</p><button>Comprar</button></div>
       </div>
     </section>
 
