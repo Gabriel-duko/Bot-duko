@@ -240,8 +240,10 @@
 		outline: 1px solid #1E7DEA;
 	}
 </style>
-	<script type='text/javascript'>
+	<script type="text/javascript">
   function initESW() {
+    var gslbBaseURL = ''; // Corrigido
+
     embedded_svc.settings.displayHelpButton = true;
     embedded_svc.settings.language = '';
 
@@ -266,9 +268,10 @@
     var s = document.createElement('script');
     s.setAttribute('src', 'https://empathetic-raccoon-fqx9cg-dev-ed.trailblaze.my.salesforce.com/embeddedservice/5.0/esw.min.js');
     s.onload = initESW;
-    document.body.appendChild(s); // ou document.head.appendChild(s);
+    document.body.appendChild(s);
   });
 </script>
+
 
 </body>
 </html>
