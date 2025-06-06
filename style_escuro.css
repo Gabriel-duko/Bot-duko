@@ -6,100 +6,132 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #2C2F4D; /* Azul escuro */
-  color: #F9F8FC; /* Lilás claro */
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-/* NAVBAR */
 .navbar {
-  background-color: #1A1C2D; /* Azul escuro intenso */
-  border-bottom: 1px solid #444;
-  color: #F9F8FC;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   font-size: 1.75rem;
   font-weight: 600;
-  color: #4EC4B0;
+  color: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-links a {
-  color: #F9F8FC;
   text-decoration: none;
+  color: #e0e0e0;
   font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: #C5A5E2;
-}
-
-/* HERO SECTION */
-.hero {
-  background-color: #3B3E5A;
-  color: #F9F8FC;
-}
-
-.hero h1 {
   color: #4EC4B0;
 }
 
-.hero p {
-  color: #D9D6EB;
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
 }
 
-/* PRODUTOS */
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #aaaaaa;
+}
+
 .produtos {
-  background-color: #2C2F4D;
-  color: #F9F8FC;
+  padding: 4rem 2rem;
+  background-color: #1a1a1a;
 }
 
 .produtos h2 {
-  color: #F9F8FC;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
 }
 
-/* CAROUSEL */
 .carousel-item img {
-  background-color: #3B3E5A;
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin: auto;
 }
 
-/* SOBRE E CONTATO */
 section {
   margin-bottom: 4rem;
 }
 
-#sobre, #contato {
-  color: #F9F8FC;
-}
-
-/* FOOTER */
 footer {
-  background-color: #1A1C2D;
-  color: #F9F8FC;
+  background-color: #1e1e1e;
+  color: #888;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
 }
 
-.footer-form label {
-  color: #F9F8FC;
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #e0e0e0;
 }
 
-.footer-form input {
-  background-color: #3B3E5A;
-  color: #F9F8FC;
-  border: 1px solid #888;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
 }
 
-.footer-form button {
-  background-color: #4EC4B0;
-  color: #1A1C2D;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.footer-form button:hover {
-  background-color: #8B5FBF;
-  color: #F9F8FC;
-}
-
-/* SWITCH DARK MODE */
 .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #444;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
 }
 
 input:checked + .slider {
@@ -108,17 +140,4 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(25px);
-}
-
-/* BOOTSTRAP ADAPTAÇÕES */
-.btn-primary {
-  background-color: #4EC4B0;
-  border-color: #4EC4B0;
-  color: #1A1C2D;
-}
-
-.btn-primary:hover {
-  background-color: #8B5FBF;
-  border-color: #8B5FBF;
-  color: #F9F8FC;
 }
