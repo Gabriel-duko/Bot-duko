@@ -5,50 +5,37 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #2C2F4D; /* Azul escuro */
   color: #F9F8FC; /* Lilás claro */
 }
 
+/* NAVBAR */
 .navbar {
   background-color: #1A1C2D; /* Azul escuro intenso */
+  border-bottom: 1px solid #444;
   color: #F9F8FC;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #4EC4B0; /* Verde água */
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #4EC4B0;
 }
 
 .nav-links a {
   color: #F9F8FC;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: #C5A5E2; /* Lilás claro */
+  color: #C5A5E2;
 }
 
+/* HERO SECTION */
 .hero {
-  background-color: #3B3E5A; /* Azul profundo */
-  padding: 5rem 2rem;
-  text-align: center;
+  background-color: #3B3E5A;
   color: #F9F8FC;
 }
 
@@ -56,56 +43,82 @@ body {
   color: #4EC4B0;
 }
 
+.hero p {
+  color: #D9D6EB;
+}
+
+/* PRODUTOS */
 .produtos {
-  padding: 3rem 2rem;
   background-color: #2C2F4D;
-}
-
-.produto-lista {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.produto {
-  border: 2px solid #C5A5E2; /* Lilás claro */
-  padding: 1rem;
-  text-align: center;
-  width: 200px;
-  border-radius: 10px;
-  background-color: #3B3E5A;
-}
-
-.produto img {
-  max-width: 100%;
-  height: auto;
-}
-
-.produto button {
-  background-color: #4EC4B0; /* Verde água */
-  color: #2C2F4D; /* Azul escuro */
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.produto button:hover {
-  background-color: #8B5FBF; /* Roxo */
   color: #F9F8FC;
 }
 
+.produtos h2 {
+  color: #F9F8FC;
+}
+
+/* CAROUSEL */
+.carousel-item img {
+  background-color: #3B3E5A;
+}
+
+/* SOBRE E CONTATO */
 section {
   margin-bottom: 4rem;
 }
 
+#sobre, #contato {
+  color: #F9F8FC;
+}
+
+/* FOOTER */
 footer {
   background-color: #1A1C2D;
   color: #F9F8FC;
-  text-align: center;
-  padding: 1rem 0;
+}
+
+.footer-form label {
+  color: #F9F8FC;
+}
+
+.footer-form input {
+  background-color: #3B3E5A;
+  color: #F9F8FC;
+  border: 1px solid #888;
+}
+
+.footer-form button {
+  background-color: #4EC4B0;
+  color: #1A1C2D;
+}
+
+.footer-form button:hover {
+  background-color: #8B5FBF;
+  color: #F9F8FC;
+}
+
+/* SWITCH DARK MODE */
+.slider {
+  background-color: #444;
+}
+
+input:checked + .slider {
+  background-color: #4EC4B0;
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+
+/* BOOTSTRAP ADAPTAÇÕES */
+.btn-primary {
+  background-color: #4EC4B0;
+  border-color: #4EC4B0;
+  color: #1A1C2D;
+}
+
+.btn-primary:hover {
+  background-color: #8B5FBF;
+  border-color: #8B5FBF;
+  color: #F9F8FC;
 }
